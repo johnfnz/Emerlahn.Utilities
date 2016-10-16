@@ -4,13 +4,13 @@
     <id>Emerlahn.Utilities</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>$author$</authors>
+    <authors>John Fahey</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/jfahey/Utilities/blob/master/LICENSE</licenseUrl> 
     <projectUrl>https://github.com/jfahey/Utilities</projectUrl>     
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
     <releaseNotes></releaseNotes>
+    <description>Utility classes</description>
     <copyright>Copyright 2016</copyright>
     <tags></tags>
   </metadata>
