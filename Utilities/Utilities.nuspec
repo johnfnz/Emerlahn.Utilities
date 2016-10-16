@@ -6,8 +6,8 @@
     <title>$title$</title>
     <authors>John Fahey</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/jfahey/Utilities/blob/master/LICENSE</licenseUrl> 
-    <projectUrl>https://github.com/jfahey/Utilities</projectUrl>     
+    <licenseUrl>https://github.com/johnfnz/Utilities/blob/master/LICENSE</licenseUrl> 
+    <projectUrl>https://github.com/johnfnz/Utilities</projectUrl>     
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes></releaseNotes>
     <description>Utility classes</description>
