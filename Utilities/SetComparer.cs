@@ -23,7 +23,7 @@ namespace Emerlahn.Utilities
             }
         }
 
-        public Comparison Compare(IEnumerable<TValue> left, IEnumerable<TValue> right, IEqualityComparer<TValue> comparer = null)
+        public Comparison Compare(ICollection<TValue> left, ICollection<TValue> right, IEqualityComparer<TValue> comparer = null)
         {
             if (comparer == null) comparer = EqualityComparer<TValue>.Default;
             var matches = left.Intersect(right, comparer).ToList();
