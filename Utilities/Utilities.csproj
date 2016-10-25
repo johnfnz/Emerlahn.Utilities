@@ -39,6 +39,7 @@
     <Content Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BooleanCombinationsGenerator.cs" />
     <Compile Include="SetComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
