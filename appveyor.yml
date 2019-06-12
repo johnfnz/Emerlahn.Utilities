@@ -4,28 +4,22 @@ branches:
   only:
     - master
 
-assembly_info:
-  patch: true
-  file: AssemblyInfo.*
-  assembly_version: "{version}"
-  assembly_file_version: "{version}"
-  assembly_informational_version: "{version}"
-
-configuration: Release
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
 
 before_build:
-  - nuget restore
+  # Display .NET Core version
+  - cmd: dotnet --version
+  # Display minimal restore text
+  - cmd: dotnet restore ./src/src.csproj --verbosity m
 
 build:
-  publish_nuget: true
-  project: Utilities.sln
-
-after_test:
+  - cmd: dotnet publish -c Release
 
 artifacts:
-  - path: Utilities\bin\Release\Emerlahn.Utilities.dll
-    name: Emerlahn.Utilities.dll
-  - path: '**\*.nupkg'
+  - path: \Utilities\bin\Release\netcoreapp2.2\publish\Emerlahn.Utilities.dll
+    name: Emerlahn.Utilities
 
 deploy:
 - provider: NuGet
@@ -35,3 +29,5 @@ deploy:
   on:
     branch: master
     appveyor_repo_tag: true
+
+deploy: off
