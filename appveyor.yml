@@ -1,4 +1,4 @@
-version: 2.0.0.{build}
+version: 3.0.0.{build}
 
 branches:
   only:
@@ -14,20 +14,28 @@ before_build:
   # Display minimal restore text
   - cmd: dotnet restore ./src/src.csproj --verbosity m
 
-build:
-  - cmd: dotnet publish -c Release
+nuget:
+  disable_publish_on_pr: true
+
+build_script:
+  - pwsh: dotnet pack -c Release
 
 artifacts:
-  - path: \Utilities\bin\Release\netcoreapp2.2\publish\Emerlahn.Utilities.dll
+  - path: \Utilities\bin\Release\*.nupkg
     name: Emerlahn.Utilities
 
 deploy:
 - provider: NuGet
-  name: production
+  server: https://ci.appveyor.com/api/github/webhook?id=el6er1bv3x8r51y2
   api_key:
-    secure: 'zGhWvyMSuDz/sqkWbDbKEPKvwnb7+R9RJ7/d2kBUSB3n819QeW6ZiV1ExL9s5uSi'
+    secure: Y1AW177YroGuyEswUZJPPMGnOvwT/At8rS5nnG4JqPA=
+  on:
+    branch: master
+- provider: NuGet
+  name: Production
+  server: https://ci.appveyor.com/api/github/webhook?id=el6er1bv3x8r51y2
+  api_key:
+    secure: Y1AW177YroGuyEswUZJPPMGnOvwT/At8rS5nnG4JqPA=
   on:
     branch: master
     appveyor_repo_tag: true
-
-deploy: off
