@@ -21,7 +21,7 @@ build_script:
   - pwsh: dotnet pack -c Release
 
 artifacts:
-  - path: \Utilities\bin\Release\*.nupkg
+  - path: \Emerlahn.Utilities\bin\Release\*.nupkg
     name: Emerlahn.Utilities
 
 deploy:
