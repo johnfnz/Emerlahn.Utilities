@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageId>Emerlahn.Utilities</PackageId>
-    <Version>3.1.0</Version>
+    <Version>3.2.0</Version>
     <Authors>John Fahey</Authors>
     <Company>Emerlahn</Company>
     <RepositoryUrl>https://github.com/johnfnz/Emerlahn.Utilities</RepositoryUrl>

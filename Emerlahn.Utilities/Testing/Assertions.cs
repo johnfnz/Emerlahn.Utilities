@@ -4,8 +4,33 @@ using System.Linq;
 
 namespace Emerlahn.Utilities.Testing
 {
-    public static class AssertionExtensions
+    public static class Assertions
     {
+        public static void ShouldBeEmpty(this IEnumerable<string> values, string because = null)
+        {
+            if (values == null) throw new ArgumentNullException(nameof(values));
+
+            if (values.Any())
+            {
+                string itemsText = string.Join("\", \"", values);
+                var reason = because == null ? string.Empty : $" because {because}";
+                throw new Exception($"Expected array to be empty{reason}, but found \"{itemsText}\".");
+            }
+        }
+
+        public static void ShouldContainSameValuesAs(this ICollection<string> left, ICollection<string> right, string becauseOnlyOnLeft = null, string becauseOnlyOnRight = null)
+        {
+            var comparer = new SetComparer<string>();
+            var comparison = comparer.Compare(left, right, StringComparer.Ordinal);
+
+            var asserts = new List<Action> {
+                () => comparison.OnlyOnLeft.ShouldBeEmpty(becauseOnlyOnLeft),
+                () => comparison.OnlyOnRight.ShouldBeEmpty(becauseOnlyOnRight)
+            };
+
+            asserts.AssertAll();
+        }
+
         public static void AssertAll(this IEnumerable<Action> asserts)
         {
             var exceptions = new List<Exception>();
