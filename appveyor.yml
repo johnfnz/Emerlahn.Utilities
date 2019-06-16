@@ -33,7 +33,7 @@ deploy:
     branch: master
 - provider: NuGet
   name: Production
-  server: https://ci.appveyor.com/api/github/webhook?id=el6er1bv3x8r51y2
+  server:
   api_key:
     secure: Y1AW177YroGuyEswUZJPPMGnOvwT/At8rS5nnG4JqPA=
   on:
