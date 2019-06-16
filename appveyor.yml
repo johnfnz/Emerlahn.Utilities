@@ -26,9 +26,9 @@ artifacts:
 
 deploy:
 - provider: NuGet
-  server: https://ci.appveyor.com/api/github/webhook?id=el6er1bv3x8r51y2
+  server: https://ci.appveyor.com/nuget/johnfahey-dtn0ofenb6gs
   api_key:
-    secure: Y1AW177YroGuyEswUZJPPMGnOvwT/At8rS5nnG4JqPA=
+    secure: epbsnPYngj++DFStPqChVVabPI13sk9A5DWAiHg61UY=
   on:
     branch: master
 - provider: NuGet
