@@ -1,6 +1,7 @@
 # Emerlahn.Utilities
 
 ## Release Process
+
 - Update appveyor.yml version
 - Update project package versions
 - Commit and push
