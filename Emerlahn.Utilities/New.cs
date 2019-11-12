@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utilities
+namespace Emerlahn.Utilities
 {
     public static class New
     {

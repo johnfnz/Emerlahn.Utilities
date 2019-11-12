@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageId>Emerlahn.Utilities</PackageId>
-    <Version>3.2.0</Version>
+    <Version>3.2.1</Version>
     <Authors>John Fahey</Authors>
     <Company>Emerlahn</Company>
     <RepositoryUrl>https://github.com/johnfnz/Emerlahn.Utilities</RepositoryUrl>
